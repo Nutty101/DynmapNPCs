@@ -1,0 +1,42 @@
+#Dynmap Citizens NPC Settings
+
+#Allow MCStats to report usage of this plugin. 
+mcstats: true
+
+#This name will show up on the website, Set it to something people will understand for the layer
+markerset_name: DynMapNPCs
+#Interval at which the NPC locations are updated
+interval: 100
+
+#Config Defaults for NPC's
+defaults:
+  icon: offlineuser
+  showhcinv: true
+  showonmap: true
+  zoomlevels:
+    min: 10
+    max: 1
+
+#Hyperconomy inventory display settings
+hyperconomy:
+  table: "<table style='border-collapse:collapse;border-spacing:0;border-color:#bbb'>
+<TR>
+  <th style='font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#493F3F;background-color:#9DE0AD;vertical-align:top'>Name</TH>
+  <th style='font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#493F3F;background-color:#9DE0AD;vertical-align:top'>Sell</TH>
+  <th style='font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#493F3F;background-color:#9DE0AD;vertical-align:top'>Buy</TH>
+  <th style='font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#493F3F;background-color:#9DE0AD;vertical-align:top'>Stock</TH>
+</tr>%rows%</table>"
+  row: "<tr>
+  <td style='font-family:Arial, sans-serif;font-size:10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#C2FFD6;vertical-align:top'>%displayname%</td>
+  <td style='font-family:Arial, sans-serif;font-size:10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#C2FFD6;vertical-align:top'>%sellamount%</td>
+  <td style='font-family:Arial, sans-serif;font-size:10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#C2FFD6;vertical-align:top'>%buyamount%</td>
+  <td style='font-family:Arial, sans-serif;font-size:10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#C2FFD6;vertical-align:top'>%stock%</td>
+</tr>
+"
+  row_alt: "<tr>
+  <td style='font-family:Arial, sans-serif;font-size:10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#E0FFEB;vertical-align:top'>%displayname%</td>
+  <td style='font-family:Arial, sans-serif;font-size:10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#E0FFEB;vertical-align:top'>%sellamount%</td>
+  <td style='font-family:Arial, sans-serif;font-size:10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#E0FFEB;vertical-align:top'>%buyamount%</td>
+  <td style='font-family:Arial, sans-serif;font-size:10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#E0FFEB;vertical-align:top'>%stock%</td>
+</tr>
+"
