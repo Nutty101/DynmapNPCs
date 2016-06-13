@@ -1,6 +1,6 @@
 name: DynMapNPC
 main: net.livecar.NuttyWorks.DynMapNPC.DynMapNPC
-version: 1.1
+version: 1.2
 depend: [Citizens, dynmap]
 commands:
   dmnpc:

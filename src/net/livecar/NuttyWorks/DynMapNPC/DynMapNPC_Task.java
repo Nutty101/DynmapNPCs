@@ -160,7 +160,7 @@ public final class DynMapNPC_Task extends BukkitRunnable
 	        	    				false);
 	        	    		
 	        	    		//Use the config defaults
-		    	    		oMarker.setMaxZoom(plugin.getConfig().getInt("defaults.zoomlevels.max",0));
+		    	    		oMarker.setMinZoom(plugin.getConfig().getInt("defaults.zoomlevels.min",0));
 		    	    		oMarker.setMaxZoom(plugin.getConfig().getInt("defaults.zoomlevels.max",10));
 		    	    		
 		    	    		if (plugin.getConfig().getBoolean("defaults.showhcinv",false))

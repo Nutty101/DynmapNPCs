@@ -36,37 +36,37 @@ public class DynMapNPC extends org.bukkit.plugin.java.JavaPlugin implements org.
 		}	
 
 		if(getServer().getPluginManager().getPlugin("dynmap") == null || getServer().getPluginManager().getPlugin("dynmap").isEnabled() == false) {
-			getLogger().log(java.util.logging.Level.SEVERE, ChatColor.RED + "dynmap not found or not enabled");
+			getLogger().log(java.util.logging.Level.SEVERE, "dynmap not found or not enabled");
 			getServer().getPluginManager().disablePlugin(this);	
 		}	
 
 		if(getServer().getPluginManager().getPlugin("HyperConomy") == null) {
-			getLogger().log(java.util.logging.Level.SEVERE, ChatColor.RED + "Hyperconomoy Not found");
+			getLogger().log(java.util.logging.Level.SEVERE, "Hyperconomoy Not found");
 			bHyperConomyExists = false;
 		}	else {
 			for (Plugin oPlug : getServer().getPluginManager().getPlugins())
 			{
-				getLogger().log(java.util.logging.Level.SEVERE, ChatColor.RED + "plugin:" + oPlug.getName());
+				getLogger().log(java.util.logging.Level.SEVERE,  "plugin:" + oPlug.getName());
 			}
 			
 			if(getServer().getPluginManager().getPlugin("HyperMerchant") == null) {
-				getLogger().log(java.util.logging.Level.SEVERE, ChatColor.RED + "HyperMerchant Not found");
+				getLogger().log(java.util.logging.Level.SEVERE, "HyperMerchant Not found");
 				bHyperConomyExists = false;
 			} else {
-				getLogger().log(java.util.logging.Level.SEVERE, ChatColor.RED + "Hyperconomy / Hypermerchant found. Enabled");
+				getLogger().log(java.util.logging.Level.SEVERE,  "Hyperconomy / Hypermerchant found. Enabled");
 				bHyperConomyExists = true;
 			}
 		}
 
 		SetupConfig();
 		
-		getLogger().log(java.util.logging.Level.INFO, ChatColor.GREEN + "Connecting to DynMap");
+		getLogger().log(java.util.logging.Level.INFO, "Connecting to DynMap");
 
 		try {
 			SetupDynMap();
 		} catch (Exception err)
 		{
-			getLogger().log(java.util.logging.Level.INFO, ChatColor.RED + "Errors while connecting to the Dynmap API");
+			getLogger().log(java.util.logging.Level.INFO, "Errors while connecting to the Dynmap API");
 			getServer().getPluginManager().disablePlugin(this);	
 			cDyn_Plugin = null;
 			cDyn_MarkAPI = null;
@@ -458,7 +458,7 @@ public class DynMapNPC extends org.bukkit.plugin.java.JavaPlugin implements org.
 					return true;
 				}
 			}
-			if (inargs[0].equalsIgnoreCase("showonmap")) 
+			if (inargs[0].equalsIgnoreCase("showonmap"))
 			{
 				if (!player.hasPermission("dynmapnpc.settings")) {
 					player.sendMessage(ChatColor.DARK_RED + "You do not have permission");
