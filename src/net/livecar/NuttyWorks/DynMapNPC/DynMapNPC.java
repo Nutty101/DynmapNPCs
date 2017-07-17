@@ -9,7 +9,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
 import org.dynmap.DynmapAPI;
 import org.dynmap.markers.MarkerAPI;
@@ -41,19 +40,14 @@ public class DynMapNPC extends org.bukkit.plugin.java.JavaPlugin implements org.
 		}	
 
 		if(getServer().getPluginManager().getPlugin("HyperConomy") == null) {
-			getLogger().log(java.util.logging.Level.SEVERE, "Hyperconomoy Not found");
+			getLogger().log(java.util.logging.Level.INFO, "Hyperconomoy Not found");
 			bHyperConomyExists = false;
 		}	else {
-			for (Plugin oPlug : getServer().getPluginManager().getPlugins())
-			{
-				getLogger().log(java.util.logging.Level.SEVERE,  "plugin:" + oPlug.getName());
-			}
-			
 			if(getServer().getPluginManager().getPlugin("HyperMerchant") == null) {
-				getLogger().log(java.util.logging.Level.SEVERE, "HyperMerchant Not found");
+				getLogger().log(java.util.logging.Level.INFO, "HyperMerchant Not found");
 				bHyperConomyExists = false;
 			} else {
-				getLogger().log(java.util.logging.Level.SEVERE,  "Hyperconomy / Hypermerchant found. Enabled");
+				getLogger().log(java.util.logging.Level.INFO,  "Hyperconomy / Hypermerchant found. Enabled");
 				bHyperConomyExists = true;
 			}
 		}
@@ -181,7 +175,7 @@ public class DynMapNPC extends org.bukkit.plugin.java.JavaPlugin implements org.
 		{
 			if (inargs[0].equalsIgnoreCase("settings")) 
 			{
-				if (!sender.hasPermission("dynmapnpc.info") || !sender.isOp()) {
+				if (!sender.hasPermission("dynmapnpc.info") && !sender.isOp()) {
 					sender.sendMessage(ChatColor.DARK_RED + "You do not have permission");
 					return true;
 				} else {
@@ -215,7 +209,7 @@ public class DynMapNPC extends org.bukkit.plugin.java.JavaPlugin implements org.
 			}
 			if (inargs[0].equalsIgnoreCase("minzoom")) 
 			{
-				if (!sender.hasPermission("dynmapnpc.settings") || !sender.isOp()) {
+				if (!sender.hasPermission("dynmapnpc.settings") && !sender.isOp()) {
 					sender.sendMessage(ChatColor.DARK_RED + "You do not have permission");
 					return true;
 				} else {
@@ -232,7 +226,7 @@ public class DynMapNPC extends org.bukkit.plugin.java.JavaPlugin implements org.
 			}	
 			if (inargs[0].equalsIgnoreCase("maxzoom")) 
 			{
-				if (!sender.hasPermission("dynmapnpc.settings") || !sender.isOp()) {
+				if (!sender.hasPermission("dynmapnpc.settings") && !sender.isOp()) {
 					sender.sendMessage(ChatColor.DARK_RED + "You do not have permission");
 					return true;
 				} else {
@@ -249,7 +243,7 @@ public class DynMapNPC extends org.bukkit.plugin.java.JavaPlugin implements org.
 			}
 			if (inargs[0].equalsIgnoreCase("showonmap")) 
 			{
-				if (!sender.hasPermission("dynmapnpc.settings") || !sender.isOp()) {
+				if (!sender.hasPermission("dynmapnpc.settings") && !sender.isOp()) {
 					sender.sendMessage(ChatColor.DARK_RED + "You do not have permission");
 					return true;
 				} else {
@@ -267,7 +261,7 @@ public class DynMapNPC extends org.bukkit.plugin.java.JavaPlugin implements org.
 			}	
 			if (inargs[0].equalsIgnoreCase("showhcinv")) 
 			{
-				if (!sender.hasPermission("dynmapnpc.settings") || !sender.isOp()) {
+				if (!sender.hasPermission("dynmapnpc.settings") && !sender.isOp()) {
 					sender.sendMessage(ChatColor.DARK_RED + "You do not have permission");
 					return true;
 				} else {

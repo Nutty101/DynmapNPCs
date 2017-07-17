@@ -1,6 +1,6 @@
 name: DynMapNPC
 main: net.livecar.NuttyWorks.DynMapNPC.DynMapNPC
-version: 1.2
+version: 1.4
 depend: [Citizens, dynmap]
 commands:
   dmnpc:
@@ -16,10 +16,3 @@ commands:
     description: DynMapNPC NPC Commands
     usage:  |
       /dmnpc help
-permissions:    
-  dynmapnpc.info:
-     description: Show config settings, as well as NPC settings
-     default: false
-  dynmapnpc.settings:
-     description: Ability to change config or NPC settings
-     default: false
